@@ -67,7 +67,6 @@ const MealCards = ({
 
   return (
     <>
-      {/* Grid for cards */}
       <div
         className="
           grid 
@@ -158,7 +157,6 @@ const MealCards = ({
         ))}
       </div>
 
-      {/* Pagination */}
       <div className="flex flex-wrap justify-center gap-3 mt-10 px-4">
         {totalPage?.map((item, index) => (
           <p

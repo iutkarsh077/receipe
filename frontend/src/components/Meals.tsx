@@ -15,7 +15,7 @@ const Meals = () => {
   };
 
   return (
-    <div className="bg-gray-100 pb-10">
+    <div className="bg-gray-50 pb-10">
       {/* Header Section */}
       <div className="flex flex-col items-center py-10 text-center px-4">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3">
@@ -80,7 +80,6 @@ const Meals = () => {
             </button>
           </div>
 
-          {/* Meal Cards */}
           <MealCards
             searchMeals={searchMeals}
             mealType={mealType}
