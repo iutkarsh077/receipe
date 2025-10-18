@@ -14,6 +14,11 @@ app.use(
 );
 app.use(express.json());
 app.use("/api/v1", router);
+
+
+app.get("/health", (req, res)=>{
+  res.send({Message: "Server health is good", status: true})
+})
 dbConnect().then(() => {
   app.listen(port, () => {
     console.log(`Server is listening at port ${port}`);
