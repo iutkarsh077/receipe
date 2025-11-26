@@ -1,15 +1,15 @@
 import type { IMeal } from "../types/FormDataTypes";
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { Eye, Loader2 } from "lucide-react";
 import { useNavigate } from "react-router";
+import api from "../helpers/api";
 
 const HomeMeals = () => {
   const navigate = useNavigate();
 
   const fetchMeals = async (): Promise<IMeal[]> => {
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/getMeals`, {
+      const res = await api.post(`/getMeals`, {
         limit: 30,
       });
       return res.data.data;

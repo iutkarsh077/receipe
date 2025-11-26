@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { Eye, Loader2 } from "lucide-react";
 import type { IMeal } from "../types/FormDataTypes";
 import { useNavigate } from "react-router";
 import { useState } from "react";
+import api from "../helpers/api";
 
 const MealCards = ({
   searchMeals,
@@ -20,7 +20,7 @@ const MealCards = ({
 
   const fetchMeals = async (): Promise<IMeal[]> => {
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/getMeals`, {
+      const res = await api.post(`/getMeals`, {
         searchMeals,
         mealType,
         mealCategory,

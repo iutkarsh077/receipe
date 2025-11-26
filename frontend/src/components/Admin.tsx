@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { INutritionTypes } from "../types/FormDataTypes";
 import { MealType } from "../helpers/constant";
 import { ChevronDown } from "lucide-react";
-import axios from "axios";
+import api from "../helpers/api";
 
 const Admin = () => {
   const [nutritionData, setNutritionData] = useState<INutritionTypes>({
@@ -64,7 +64,7 @@ const Admin = () => {
   }
 
   try {
-     await axios.post(`${import.meta.env.VITE_BASE_URL}/save`, formData);
+     await api.post(`/save`, formData);
     // console.log("Upload successful:", res);
   } catch (error) {
     console.error("Error uploading meal:", error);

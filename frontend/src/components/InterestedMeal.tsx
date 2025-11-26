@@ -1,16 +1,16 @@
 import { useNavigate, useParams } from "react-router";
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import type { IMeal } from "../types/FormDataTypes";
 import { Loader2 } from "lucide-react";
+import api from "../helpers/api";
 
 const InterestedMeal = () => {
   const navigate = useNavigate();
 const { name } = useParams();
   const fetchInterestedMeals = async () => {
     try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/interested-meal`
+      const res = await api.get(
+        `/interested-meal`
       );
       // console.log(res.data.data)
       return res.data.data;

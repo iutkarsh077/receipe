@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { Loader2 } from "lucide-react";
 import { useParams } from "react-router";
 import type { IMeal } from "../types/FormDataTypes";
 import InfoCalorie from "./InfoCalorie";
 import InterestedMeal from "./InterestedMeal";
 import Chatbot from "./Chatbot";
+import api from "../helpers/api";
 
 const SpecificMeal = () => {
   const { name } = useParams();
@@ -13,8 +13,8 @@ const SpecificMeal = () => {
   const fetchMeal = async (): Promise<IMeal> => {
     try {
         // console.log(name)
-      const res = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/meal/${name}`
+      const res = await api.get(
+        `/meal/${name}`
       );
       // console.log(res)
       return res.data.data;
