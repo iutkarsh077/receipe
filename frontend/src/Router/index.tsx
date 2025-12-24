@@ -7,6 +7,7 @@ import Blogs from "../components/Blog";
 import Admin from "../components/Admin";
 import SpecificMeal from "../components/SpecificMeal";
 import App from "../App";
+import NotFound from "../components/NotFound";
 const Router = () => {
   return (
     <Routes>
@@ -18,6 +19,7 @@ const Router = () => {
       <Route path="contact" element={<Contact />} />
       <Route path="admin" element={<Admin />} />
       <Route path="meal/:name" element={<SpecificMeal />} />
+       <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
