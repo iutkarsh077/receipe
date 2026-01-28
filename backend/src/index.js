@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import dbConnect from "./utils/dbConnect.js"
 import router from "./Router/routes.js";
+import NotFound from "./controllers/NotFound.js";
 const port = process.env.PORT || 3000;
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(
 );
 app.use(express.json());
 app.use("/api/v1", router);
-
+app.use(NotFound);
 
 app.get("/health", (req, res)=>{
   res.send({Message: "Server health is good", status: true})

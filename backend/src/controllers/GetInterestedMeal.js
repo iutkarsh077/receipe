@@ -4,6 +4,8 @@ const GetInterestedMeal = async (req, res) => {
   try {
     const getMeals = await Meal.aggregate([{ $sample: { size: 4 } }]);
 
+
+    
     // console.log("Interested nmelsmln", getMeals);
     return res
       .status(200)

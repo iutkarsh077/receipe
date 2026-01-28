@@ -16,6 +16,8 @@ A full-stack MERN application for displaying meals with nutritional data. Fronte
 
 ---
 
+
+
 ## 💻 Technologies Used
 
 **Frontend:** React 18 + TypeScript, Tailwind CSS, React Query, Axios, Lucide React, Vite  
