@@ -1,8 +1,8 @@
 import { Bot, User } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { IMeal } from "../types/FormDataTypes";
-import axios from "axios";
 import "../App.css";
+import api from "../helpers/api";
 
 interface IConversation {
   question: string;
@@ -31,7 +31,7 @@ const Chatbot = ({ data }: { data: IMeal }) => {
 
   const handleChatBot = async () => {
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/chat`, {
+      const res = await api.post(`/chat`, {
         ques: question,
         food: data,
       });
