@@ -8,11 +8,13 @@ import Admin from "../components/Admin";
 import SpecificMeal from "../components/SpecificMeal";
 import App from "../App";
 import NotFound from "../components/NotFound";
+import Auth from "../components/Auth";
 const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<App />} >
       <Route index element={<Home />} />
+       <Route path="auth" element={<Auth />} />
       <Route path="meals" element={<Meals />} />
       <Route path="blogs" element={<Blogs />} />
       <Route path="about" element={<About />} />

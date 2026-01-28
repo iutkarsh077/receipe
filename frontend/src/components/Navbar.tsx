@@ -2,6 +2,12 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router";
 import { NavItems } from "../helpers/constant";
 import { Menu, X } from "lucide-react";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -29,6 +35,12 @@ const Navbar = () => {
               </p>
             </Link>
           ))}
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
 
         {/* Mobile Menu Button */}
@@ -56,6 +68,14 @@ const Navbar = () => {
               <span>{item.title}</span>
             </Link>
           ))}
+          <div className="px-4 py-2">
+            <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          </div>
         </div>
       )}
     </nav>
